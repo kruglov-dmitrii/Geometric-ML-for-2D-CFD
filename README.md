@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/4285d496-9347-4ca8-bae8-4700f9e65465
 In this work I am using the `cylinder_flow` dataset from the [DeepMind’s MeshGraphNets framework](https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets), 
 
 ## Downloading the training data
-The datasets can be downloaded via the `get_dataset_script/download_dataset.sh` script. This is a modified script taken from https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets.
+The datasets can be downloaded via the `dataset_scripts/download_deepmind_dataset.sh` script. This is a modified script taken from https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets.
 
 ## Converting data to PyTorch format
 DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and the `train` sets are downloaded in the `.tfrecord` format. 
@@ -22,7 +22,7 @@ DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and
 └── valid.tfrecord
 ```
 
-These can be converted these into `.pt` files via the `get_dataset_script/run_conversion.py` script. They are then easily accessible via `torch.load()`. After conversion the data should looks like:
+These can be converted these into `.pt` files via the `dataset_scripts/run_conversion.py` script. They are then easily accessible via `torch.load()`. After conversion the data should looks like:
 ```bash
 
 └── test
