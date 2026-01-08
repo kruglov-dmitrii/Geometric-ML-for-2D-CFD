@@ -1,14 +1,19 @@
 # Geometric-ML-for-2D-CFD
-Exploring the principles of Geometric Machine Learning (equivariances &amp; invariances) and Topological Analysis applied to the 2D Computational Fluid Dynamics problem.
+This project explores the principles of Geometric Machine Learning (equivariances &amp; invariances) and Topological Analysis applied to a problem of 2D Computational Fluid Dynamics.
 
 # Problem Statement
-[![Watch the video](https://raw.githubusercontent.com/yourusername/yourrepository/main/assets/thumbnail.jpg)](https://drive.google.com/file/d/1tHdQvCbvCvDpkXEGaDgWqgLknotfDNpE/view?t=1)
+We are given a 2D rectangular CFD domain of a fixed size. The left and the right boundaries are an *Inlet* and an *Outlet*, which define the flow of the liquid through the domain. The top and the bottom boundaries are fixed solid walls. A cylindrical obstacle defined by $\left((x,y),R\right)$ obstructs the flow.
+
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/236a77fe-bb6d-479a-b3c6-32b23efd9089" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/73ed32c3-0f2f-47db-9f65-cf577730f6f5" />
+
+Our target is to develop an ML algorithm which for a given CFD domain and a given cylinder obstacle correctly builds the mesh, calculates the relevant $(u,v,p)$ field quantities at each mesh node, and predicts the time dynamics. Desired outcome: https://drive.google.com/file/d/1tHdQvCbvCvDpkXEGaDgWqgLknotfDNpE/view
 
 # Resources
 ## Dataset
 - Xu, Wenzhuo, Noelia Grande Gutierrez, and Christopher McComb. "MegaFlow2D: A parametric dataset for machine learning super-resolution in computational fluid dynamics simulations." Proceedings of Cyber-Physical Systems and Internet of Things Week 2023. 2023. 100-104.
   - Paper: [https://dl.acm.org/doi/abs/10.1145/3576914.3587552](https://dl.acm.org/doi/abs/10.1145/3576914.3587552)
-  - GitHub: [https://github.com/cmudrc/MegaFlow2D](https://dl.acm.org/doi/abs/10.1145/3576914.3587552)
+  - GitHub: [https://github.com/cmudrc/MegaFlow2D](https://github.com/cmudrc/MegaFlow2D)
 
 ## Relevant papers
 - Cheng, S., Bocquet, M., Ding, W., Finn, T. S., Fu, R., Fu, J., ... & Arcucci, R. (2025). Machine learning for modelling unstructured grid data in computational physics: a review. Information Fusion, 103255. [https://www.sciencedirect.com/science/article/pii/S1566253525003288](https://www.sciencedirect.com/science/article/pii/S1566253525003288)
