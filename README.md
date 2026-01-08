@@ -16,21 +16,27 @@ The dataset consists of 1000/100/100 train/validation/test samples. Each sample 
 The data containing in each sample:
 - **`sample['mesh_pos']`** — `(num_nodes, 2)`
 	- Mesh node coordinates. Each row corresponds to the $(x, y)$ position of a mesh node.
+
+   		<img width="325" alt="image" src="https://github.com/user-attachments/assets/6641ff01-3f32-42b6-8e8f-9d812c814cc6" />
+
 - **`sample['cells']`** — `(num_cells, 3)`
 	- Mesh connectivity. Each row lists the indices of the three nodes forming a triangular cell.
- 	``` python
-	>> sample['cells'][5,:]
-    tensor([10, 13, 14], dtype=torch.int32)
-    ``` 
+	 	``` python
+		>> sample['cells'][5,:]
+	    tensor([10, 13, 14], dtype=torch.int32)
+	    ```
+
+		<img width="325" alt="image" src="https://github.com/user-attachments/assets/fedea746-cb38-4aca-947f-4064ef499946" />
+
+   
 - **`sample['node_type']`** — `(num_nodes,1)`
 	- Integer encoding of node types: 0-internal node, 4-inlet node, 5-outlet node, 6-wall nodes.
-- **`sample['velocity']`** — `(num_timesteps, num_nodes, 2)`
-	- Time-dependent velocity field. The last dimension corresponds to the $(u,v)$ x- and y-velocity at the node.
 - **`sample['pressure']`**, size: `(num_timesteps, num_nodes, 1)`
 	- Time-dependent pressure field.
+- **`sample['velocity']`** — `(num_timesteps, num_nodes, 2)`
+	- Time-dependent velocity field. The last dimension corresponds to the $x$- and $y$- velocity $(u,v)$ at the node.
 
-Example: mesh+velocity vectors visualized from a random sample at time step `T=400`:
-<img width="750" alt="image" src="https://github.com/user-attachments/assets/75af2b37-6b9c-4f1b-bdf6-7133ba75531c" />
+		<img width="750" alt="image" src="https://github.com/user-attachments/assets/75af2b37-6b9c-4f1b-bdf6-7133ba75531c" />
 
 
 ## Downloading the training data
