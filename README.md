@@ -1,13 +1,14 @@
-# Geometric-ML-for-2D-CFD
 This project explores the principles of Geometric Machine Learning (equivariances &amp; invariances) and Topological Analysis applied to a problem of 2D Computational Fluid Dynamics.
 
-# Problem Statement
+# Introduction
+
+## Problem Statement
 We are given a 2D rectangular CFD domain of a fixed size. The left and the right boundaries are an *Inlet* and an *Outlet*, which define the flow of the liquid through the domain. The top and the bottom boundaries are fixed solid walls. A cylindrical obstacle defined by $\left((x,y),R\right)$ obstructs the flow.
 
-<img height="350" alt="image" src="https://github.com/user-attachments/assets/236a77fe-bb6d-479a-b3c6-32b23efd9089" />
-<img height="350" alt="image" src="https://github.com/user-attachments/assets/73ed32c3-0f2f-47db-9f65-cf577730f6f5" />
+<img height="250" alt="image" src="https://github.com/user-attachments/assets/236a77fe-bb6d-479a-b3c6-32b23efd9089" />
+<img height="250" alt="image" src="https://github.com/user-attachments/assets/73ed32c3-0f2f-47db-9f65-cf577730f6f5" />
 
-Our target is to develop an ML algorithm which for a given CFD domain and a given cylinder obstacle correctly builds the mesh, calculates the relevant $(u,v,p)$ field quantities at each mesh node, and predicts the time dynamics. Desired outcome: https://drive.google.com/file/d/1tHdQvCbvCvDpkXEGaDgWqgLknotfDNpE/view
+Our target is to develop an ML algorithm which for a given CFD domain and a given cylinder correctly builds the mesh, calculates the relevant $(u,v,p)$ field quantities at each mesh node, and predicts the time dynamics. The desired outcome is osmething like: https://drive.google.com/file/d/1tHdQvCbvCvDpkXEGaDgWqgLknotfDNpE/view
 
 # Resources
 ## Dataset
@@ -22,6 +23,7 @@ Our target is to develop an ML algorithm which for a given CFD domain and a give
   - GitHub repo: [https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets](sites.google.com/view/meshgraphnets)
   - Video site: [sites.google.com/view/meshgraphnets](sites.google.com/view/meshgraphnets)
   - Paper: [arxiv.org/abs/2010.03409](arxiv.org/abs/2010.03409)
+- Fink, O., Nejjar, I., Sharma, V., Niresi, K. F., Sun, H., Dong, H., ... & Zhao, M. (2025). From Physics to Machine Learning and Back: Part II-Learning and Observational Bias in PHM. arXiv preprint arXiv:2509.21207. [https://arxiv.org/abs/2509.21207](https://arxiv.org/abs/2509.21207) 
  
 ## Lectures & Learning Materials
 - Nice youtube intro: 
