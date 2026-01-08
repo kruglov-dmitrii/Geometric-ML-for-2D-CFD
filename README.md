@@ -1,5 +1,8 @@
 # Geometric-ML-for-2D-CFD
-Exploring the principles of Geometric Machine Learning (equivariances &amp; invariances) and Topological Analysis applied to Computation Physics problems.
+Exploring the principles of Geometric Machine Learning (equivariances &amp; invariances) and Topological Analysis applied to the 2D Computational Fluid Dynamics problem.
+
+# Problem Statement
+[![Watch the video](https://raw.githubusercontent.com/yourusername/yourrepository/main/assets/thumbnail.jpg)](https://drive.google.com/file/d/1tHdQvCbvCvDpkXEGaDgWqgLknotfDNpE/view?t=1)
 
 # Resources
 ## Dataset
