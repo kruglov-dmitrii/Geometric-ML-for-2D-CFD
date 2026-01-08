@@ -3,7 +3,7 @@ This project explores the principles of Geometric Machine Learning applied to a 
 # Overview
 I consider a 2D rectangular CFD domain of fixed size, modeling an incompressible laminar flow governed by the Navier–Stokes equations. The left and right boundaries act as an inlet and an outlet, defining the flow through the domain, while the top and bottom boundaries are fixed no-slip walls. A cylindrical obstacle obstructs the flow inside the domain. 
 
-The goal is to develop a mesh-based machine learning model which, for a given domain, cylinder configuration, and fixed mesh, predicts the time-dependent flow velocity fields $(u,v)$ and pressure field $p$ at each mesh node, with a particular focus on evaluating equivariant graph neural networks.
+The goal is to develop a mesh-based machine learning model which, for a given domain, cylinder configuration, and fixed mesh, predicts the time-dependent flow velocity fields $(u,v)$ and pressure field $p$ at each mesh node.
 
 https://github.com/user-attachments/assets/4285d496-9347-4ca8-bae8-4700f9e65465
 
