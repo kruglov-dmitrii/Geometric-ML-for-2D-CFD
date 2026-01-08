@@ -10,6 +10,39 @@ https://github.com/user-attachments/assets/4285d496-9347-4ca8-bae8-4700f9e65465
 # Data
 In this work I am using the `cylinder_flow` dataset from the [DeepMind’s MeshGraphNets framework](https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets), 
 
+## Downloading the training data
+The datasets can be downloaded via the `get_dataset_script/download_dataset.sh` script. This is a modified script taken from https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets.
+
+## Converting data to PyTorch format
+DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and the `train` sets are downloaded in the `.tfrecord` format. 
+```bash
+├── meta.json
+├── test.tfrecord
+├── train.tfrecord
+└── valid.tfrecord
+```
+
+These can be converted these into `.pt` files via the `get_dataset_script/run_conversion.py` script. They are then easily accessible via `torch.load()`. After conversion the data should looks like:
+```bash
+
+└── test
+    ├── index.json
+    ├── sample_000000.pt
+    ├── sample_000001.pt
+	...
+└── train
+    ├── index.json
+    ├── sample_000000.pt
+    ├── sample_000001.pt
+	...
+└── valid
+    ├── index.json
+    ├── sample_000000.pt
+    ├── sample_000001.pt
+	...
+```
+
+
 ## Data structure
 The dataset consists of 1000/100/100 train/validation/test samples. Each sample represents the mesh and the (time-dependent) field solutions for a particular cylinder position and size.
 
@@ -37,75 +70,6 @@ The data containing in each sample:
 	- Time-dependent velocity field. The last dimension corresponds to the $x$- and $y$- velocity $(u,v)$ at the node.
 
 		<img width="750" alt="image" src="https://github.com/user-attachments/assets/75af2b37-6b9c-4f1b-bdf6-7133ba75531c" />
-
-
-## Downloading the training data
-Instructions on how to download the training dataset can be found here: https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets. I've downloaded the data via the `download_dataset.sh` script:
-
-```bash
-sh download_dataset.sh cylinder_flow $DESTINATION_FOLDER
-```
-
-<details>
-  <summary>The download_dataset.sh script</summary>
-	
-  ```bash
-#!/bin/bash
-# Copyright 2020 Deepmind Technologies Limited.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# Usage:
-#     sh download_dataset.sh ${DATASET_NAME} ${OUTPUT_DIR}
-# Example:
-#     sh download_dataset.sh flag_simple /tmp/
-
-set -e
-
-DATASET_NAME="${1}"
-OUTPUT_DIR="${2}/${DATASET_NAME}"
-
-BASE_URL="https://storage.googleapis.com/dm-meshgraphnets/${DATASET_NAME}/"
-
-mkdir -p ${OUTPUT_DIR}
-for file in meta.json train.tfrecord valid.tfrecord test.tfrecord
-do
-wget -O "${OUTPUT_DIR}/${file}" "${BASE_URL}${file}"
-done	
-  ```
-</details>
-
-## Converting data to PyTorch format
-DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and the `train` sets are downloaded in the `.tfrecord` format. 
-```bash
-├── meta.json
-├── test.tfrecord
-├── train.tfrecord
-└── valid.tfrecord
-```
-
-I have converted these into `.pt` files that are easily accessible via `torch.load()`. After conversion the data looks like:
-```bash
-./pt_test/
-├── index.json
-├── sample_000000.pt
-├── sample_000001.pt
-├── sample_000002.pt
-├── sample_000003.pt
-...
-```
-
-
 
 # Resources
 ## Dataset
