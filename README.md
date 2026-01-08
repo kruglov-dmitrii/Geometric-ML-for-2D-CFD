@@ -20,7 +20,7 @@ Our target is to develop an ML algorithm which for a given CFD domain and a give
 - Cheng, S., Bocquet, M., Ding, W., Finn, T. S., Fu, R., Fu, J., ... & Arcucci, R. (2025). Machine learning for modelling unstructured grid data in computational physics: a review. Information Fusion, 103255. [https://www.sciencedirect.com/science/article/pii/S1566253525003288](https://www.sciencedirect.com/science/article/pii/S1566253525003288)
 - Chen, J., E. Hachem, and J. Viquerat. "Graph neural networks for laminar flow prediction around random two-dimensional shapes." (2021). [https://hal.science/hal-03432662/](https://hal.science/hal-03432662/) 
 - Pfaff, T., Fortunato, M., Sanchez-Gonzalez, A., & Battaglia, P. (2020, October). Learning mesh-based simulation with graph networks. In International conference on learning representations.
-  - GitHub repo: [https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets](sites.google.com/view/meshgraphnets)
+  - GitHub repo: [sites.google.com/view/meshgraphnets](https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets)
   - Video site: [sites.google.com/view/meshgraphnets](sites.google.com/view/meshgraphnets)
   - Paper: [arxiv.org/abs/2010.03409](arxiv.org/abs/2010.03409)
 - Fink, O., Nejjar, I., Sharma, V., Niresi, K. F., Sun, H., Dong, H., ... & Zhao, M. (2025). From Physics to Machine Learning and Back: Part II-Learning and Observational Bias in PHM. arXiv preprint arXiv:2509.21207. [https://arxiv.org/abs/2509.21207](https://arxiv.org/abs/2509.21207) 
