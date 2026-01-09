@@ -88,7 +88,7 @@ The data containing in each sample:
   - GitHub repo: [https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets](https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets)
   	- **cylinder_flow** dataset from https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets#datasets
   - Video site: [https://sites.google.com/view/meshgraphnets](https://sites.google.com/view/meshgraphnets)
-  - Paper: [arxiv.org/abs/2010.03409](arxiv.org/abs/2010.03409)
+  - Paper: [https://arxiv.org/abs/2010.03409](https://arxiv.org/abs/2010.03409)
 
 
 ## Relevant papers
