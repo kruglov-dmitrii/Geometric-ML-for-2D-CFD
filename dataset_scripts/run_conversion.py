@@ -1,18 +1,13 @@
-"""Example programmatic runner for TFRecord->.pt conversion.
-
-Import `convert_tfrecord_to_pt` from `scripts.convert_tfrecord_to_pt` and call it
-from your code to customize behavior.
-
-Usage: modify the variables below and run `python scripts/run_conversion.py`.
-"""
 from convert_tfrecord_to_pt import convert_tfrecord_to_pt
 
-
+# Location of the DeepMind TFRecord files and metadata
 TF_PATHS = ['./deepmind_datasets/cylinder_flow/test.tfrecord', 
             './deepmind_datasets/cylinder_flow/valid.tfrecord', 
             './deepmind_datasets/cylinder_flow/train.tfrecord'
             ]
+# Location of the DeepMind metadata file
 META = ["./deepmind_datasets/cylinder_flow/meta.json"] * 3
+# Output location for the converted PyTorch files
 PT_PATHS = ['./cylinder_flow_dataset/test', 
             './cylinder_flow_dataset/valid', 
             './cylinder_flow_dataset/train'
