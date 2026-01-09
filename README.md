@@ -1,7 +1,7 @@
-This project explores the principles of Geometric Machine Learning applied to a problem of 2D Computational Fluid Dynamics.
-
 # Overview
-Consider a 2D incompressible laminar flow through a rectangular domain governed by the Navier–Stokes equations. The left and right boundaries act as an inlet and an outlet, defining the flow through the domain, while the top and bottom boundaries are fixed no-slip walls. A cylindrical obstacle obstructs the flow inside the domain. 
+This project explores the principles of Geometric Machine Learning applied to a problem of 2D Computational Fluid Dynamics (CFD).
+
+Consider a laminar flow of incompressible liquid through a rectangular domain governed by the Navier–Stokes equations. The left and right boundaries act as an inlet and an outlet, defining the flow through the domain, while the top and bottom boundaries are fixed no-slip walls. A cylindrical obstacle obstructs the flow inside the domain. 
 
 The goal of this project is to develop a mesh-based machine learning model which, for a given domain, cylinder configuration, and fixed mesh, predicts the time-dependent flow velocity fields $(u,v)$ and pressure field $p$ at each mesh node.
 
@@ -11,11 +11,18 @@ https://github.com/user-attachments/assets/4285d496-9347-4ca8-bae8-4700f9e65465
 In this work I am using the `cylinder_flow` dataset from the [DeepMind’s MeshGraphNets framework](https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets), 
 
 ## Downloading the training data
-The datasets can be downloaded via the `dataset_scripts/download_deepmind_dataset.sh` script. This is a modified script taken from https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets.
+The datasets can be downloaded from
+```
+https://storage.googleapis.com/dm-meshgraphnets/cylinder_flow/train.tfrecord
+https://storage.googleapis.com/dm-meshgraphnets/cylinder_flow/valid.tfrecord
+https://storage.googleapis.com/dm-meshgraphnets/cylinder_flow/test.tfrecord
+```
+or via the `dataset_scripts/download_deepmind_dataset.sh` script.
 
 ## Converting data to PyTorch format
 DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and the `train` sets are downloaded in the `.tfrecord` format. 
 ```bash
+./deepmind_datasets/cylinder_flow
 ├── meta.json
 ├── test.tfrecord
 ├── train.tfrecord
@@ -24,7 +31,7 @@ DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and
 
 These can be converted these into `.pt` files via the `dataset_scripts/run_conversion.py` script. They are then easily accessible via `torch.load()`. After conversion the data should looks like:
 ```bash
-
+./cylinder_flow_dataset
 └── test
     ├── index.json
     ├── sample_000000.pt
@@ -66,6 +73,10 @@ The data containing in each sample:
 	- Integer encoding of node types: 0-internal node, 4-inlet node, 5-outlet node, 6-wall nodes.
 - **`sample['pressure']`**, size: `(num_timesteps, num_nodes, 1)`
 	- Time-dependent pressure field.
+
+   		<img width="750" alt="image" src="https://github.com/user-attachments/assets/db899aab-5d8d-41ad-ab6a-ecd9b3115fc2" />
+
+
 - **`sample['velocity']`** — `(num_timesteps, num_nodes, 2)`
 	- Time-dependent velocity field. The last dimension corresponds to the $x$- and $y$- velocity $(u,v)$ at the node.
 
@@ -97,3 +108,5 @@ The data containing in each sample:
 - [**AMMI Course "Geometric Deep Learning" - Lecture 1 (Introduction) - Michael Bronstein**](https://www.youtube.com/watch?v=PtA0lg_e5nA)
 - Bronstein, M. M., Bruna, J., Cohen, T., & Veličković, P. (2021). Geometric deep learning: Grids, groups, graphs, geodesics, and gauges. arXiv preprint arXiv:2104.13478. [https://arxiv.org/abs/2104.13478](https://arxiv.org/abs/2104.13478)
 - Machine Learning for Computational Fluid Dynamics [https://www.youtube.com/watch?v=IXMSOSEj14Q](https://www.youtube.com/watch?v=IXMSOSEj14Q)
+- MeshGraphNets_pytorch
+ [https://github.com/echowve/meshGraphNets_pytorch](https://github.com/echowve/meshGraphNets_pytorch)
