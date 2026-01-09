@@ -5,7 +5,7 @@ Consider a laminar flow of incompressible liquid through a rectangular domain go
 
 The goal of this project is to develop a mesh-based machine learning model which, for a given domain, cylinder configuration, and fixed mesh, predicts the time-dependent flow velocity fields $(u,v)$ and pressure field $p$ at each mesh node.
 
-https://github.com/user-attachments/assets/4285d496-9347-4ca8-bae8-4700f9e65465
+https://github.com/user-attachments/assets/c766e7fe-19b2-4fad-81fa-0b72fb3e2cbc
 
 # Data
 In this work I am using the `cylinder_flow` dataset from the [DeepMind’s MeshGraphNets framework](https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets), 
@@ -29,7 +29,7 @@ DeepMind team used TensorFlow in their work, and so the `test`, the `valid`, and
 └── valid.tfrecord
 ```
 
-These can be converted these into `.pt` files via the `dataset_scripts/run_conversion.py` script. They are then easily accessible via `torch.load()`. After conversion the data should looks like:
+These can be converted into pytorch-readable `.pt` files via the `dataset_scripts/run_conversion.py` script. They are then easily accessible via `torch.load()`. After conversion the data should looks like:
 ```bash
 ./cylinder_flow_dataset
 └── test
