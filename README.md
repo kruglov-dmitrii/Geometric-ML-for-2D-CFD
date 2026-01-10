@@ -101,6 +101,7 @@ The data containing in each sample:
 - Xu, Wenzhuo, Noelia Grande Gutierrez, and Christopher McComb. "MegaFlow2D: A parametric dataset for machine learning super-resolution in computational fluid dynamics simulations." Proceedings of Cyber-Physical Systems and Internet of Things Week 2023. 2023. 100-104.
   - Paper: [https://dl.acm.org/doi/abs/10.1145/3576914.3587552](https://dl.acm.org/doi/abs/10.1145/3576914.3587552)
   - GitHub: [https://github.com/cmudrc/MegaFlow2D](https://github.com/cmudrc/MegaFlow2D)
+- Thuerey, N., Weißenow, K., Prantl, L., & Hu, X. (2020). Deep learning methods for Reynolds-averaged Navier–Stokes simulations of airfoil flows. AIAA journal, 58(1), 25-36. [https://arc.aiaa.org/doi/epdf/10.2514/1.J058291](https://arc.aiaa.org/doi/epdf/10.2514/1.J058291)
 
 ## Lectures & Learning Materials
 - Nice youtube intro: 
